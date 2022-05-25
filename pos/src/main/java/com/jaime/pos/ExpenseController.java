@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExpenseController
 {
 
-    @GetMapping("/expense")
+    @GetMapping(value = "/expense")
     public String init()
     {
         return "Expense Controller is working";

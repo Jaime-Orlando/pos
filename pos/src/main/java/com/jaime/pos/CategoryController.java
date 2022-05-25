@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PosController
+public class CategoryController
 {
 
-    @GetMapping(value = "/init")
+    @GetMapping(value = "/category")
     public String init()
     {
-        return "It's working";
+        return "Category Controller is working!";
     }
 
 }
