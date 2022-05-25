@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Sale
+public class ClientController
 {
 
-    @GetMapping(value = "sale")
+    @GetMapping(value = "/client")
     public String init()
     {
-        return "Sale Controller Working!";
+        return "Client Controller Working!!!";
     }
 
 }
