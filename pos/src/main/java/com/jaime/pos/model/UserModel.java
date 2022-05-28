@@ -2,13 +2,15 @@ package com.jaime.pos.model;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class UserModel 
 {
 	
 	private int id;
 	private String name;
-	private int managerId;
-	private String address;
+	private LocalDateTime lastAccess;
+	private int roleId;
 
 }

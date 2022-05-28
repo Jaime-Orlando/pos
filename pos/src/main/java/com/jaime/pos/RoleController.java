@@ -1,16 +1,49 @@
 package com.jaime.pos;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.jaime.pos.model.RoleModel;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
+@RequestMapping("/role/")
 public class RoleController
 {
 
-    @GetMapping(value = "/role")
-    public String init()
+    @GetMapping("list")
+    @ResponseBody
+    public List<RoleModel> read()
     {
-        return "Role Controller Working!";
+        List<RoleModel> roles = new ArrayList<>();
+        RoleModel role = new RoleModel();
+        role.setId(1);
+        role.setName("Administrator");
+        role.setDescription("Has all privileges");
+        roles.add(role);
+        return roles;
+    }
+
+    @GetMapping("delete/{roleId}")
+    @ResponseBody
+    public String delete(@PathVariable int roleId)
+    {
+        return MessageFormat.format("Successfully deleted role with ID: {0}", roleId);
+    }
+
+    @PostMapping("new")
+    @ResponseBody
+    public RoleModel create(@ModelAttribute RoleModel roleModel)
+    {
+        return roleModel;
+    }
+
+    @PostMapping("update")
+    @ResponseBody
+    public RoleModel update(@ModelAttribute RoleModel roleModel)
+    {
+        return roleModel;
     }
 
 }

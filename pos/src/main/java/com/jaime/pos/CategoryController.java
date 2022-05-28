@@ -1,16 +1,48 @@
 package com.jaime.pos;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.jaime.pos.model.CategoryModel;
+import com.jaime.pos.model.ProductModel;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
+@RequestMapping("/category/")
 public class CategoryController
 {
 
-    @GetMapping(value = "/category")
-    public String init()
+    @GetMapping("list" )
+    @ResponseBody
+    public List<CategoryModel> read()
     {
-        return "Category Controller is working!";
+        List<CategoryModel> categoryModels = new ArrayList<>();
+        CategoryModel categoryModel = new CategoryModel();
+        categoryModel.setId(1);
+        categoryModel.setDescription("Entertainment Content");
+        categoryModel.setName("Entertainment");
+        categoryModels.add(categoryModel);
+        return categoryModels;
+    }
+
+    @GetMapping("delete/{categoryId}")
+    @ResponseBody
+    public String delete(@PathVariable int categoryId)
+    {
+        return MessageFormat.format("Successfully deleted category with id {0}", categoryId);
+    }
+
+    @PostMapping("new")
+    @ResponseBody
+    public CategoryModel create(@ModelAttribute CategoryModel categoryModel){
+        return categoryModel;
+    }
+
+    @PostMapping("update")
+    @ResponseBody
+    public CategoryModel update(@ModelAttribute CategoryModel categoryModel){
+        return categoryModel;
     }
 
 }
