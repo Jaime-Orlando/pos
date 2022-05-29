@@ -1,4 +1,4 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.ProductModel;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product/")
-public class ProductController
+public class ProductRestController
 {
 
     @GetMapping(value = "list")
@@ -30,6 +30,13 @@ public class ProductController
         list.add(productModel);
 
         return list;
+    }
+
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "OK";
     }
 
     @GetMapping("delete/{productId}")

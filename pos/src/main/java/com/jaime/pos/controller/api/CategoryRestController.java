@@ -1,7 +1,6 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.CategoryModel;
-import com.jaime.pos.model.ProductModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
@@ -10,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/category/")
-public class CategoryController
+public class CategoryRestController
 {
 
     @GetMapping("list" )

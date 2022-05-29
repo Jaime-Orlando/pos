@@ -1,4 +1,4 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.Currency;
 import com.jaime.pos.model.ExpenseModel;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/expense/")
-public class ExpenseController
+public class ExpenseRestController
 {
 
     @GetMapping("list")

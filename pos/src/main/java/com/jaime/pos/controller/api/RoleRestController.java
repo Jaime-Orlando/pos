@@ -1,4 +1,4 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.RoleModel;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/role/")
-public class RoleController
+public class RoleRestController
 {
 
     @GetMapping("list")

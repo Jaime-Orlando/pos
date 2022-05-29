@@ -1,4 +1,4 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.ProviderModel;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/provider/")
-public class ProviderController
+public class ProviderRestController
 {
 
     @GetMapping("list")

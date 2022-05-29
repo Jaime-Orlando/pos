@@ -1,10 +1,10 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PosController
+public class PosRestController
 {
 
     @GetMapping(value = "/init")

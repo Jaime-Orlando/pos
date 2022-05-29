@@ -1,4 +1,4 @@
-package com.jaime.pos;
+package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.EmployeeModel;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employee/")
-public class EmployeeController
+public class EmployeeRestController
 {
     @GetMapping("list")
     public List<EmployeeModel> read()
