@@ -36,7 +36,7 @@ public class ProductRestController
     @ResponseBody
     public String init()
     {
-        return "OK";
+        return "Product OK";
     }
 
     @GetMapping("delete/{productId}")

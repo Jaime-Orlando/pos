@@ -25,6 +25,13 @@ public class CategoryRestController
         return categoryModels;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return("Category OK");
+    }
+
     @GetMapping("delete/{categoryId}")
     @ResponseBody
     public String delete(@PathVariable int categoryId)
