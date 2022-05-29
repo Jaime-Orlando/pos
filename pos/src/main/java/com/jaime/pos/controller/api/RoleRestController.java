@@ -25,6 +25,13 @@ public class RoleRestController
         return roles;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Role OK";
+    }
+
     @GetMapping("delete/{roleId}")
     @ResponseBody
     public String delete(@PathVariable int roleId)
