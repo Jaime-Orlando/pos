@@ -31,6 +31,13 @@ public class ClientRestController
         return clients;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Client OK";
+    }
+
     @GetMapping("delete/{clientId}")
     @ResponseBody
     public String delete(@PathVariable String clientId)
