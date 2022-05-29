@@ -25,6 +25,13 @@ public class ProviderRestController
         return providers;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Provider OK";
+    }
+
     @GetMapping("delete/{providerId}")
     @ResponseBody
     public String delete(@PathVariable int providerId)
