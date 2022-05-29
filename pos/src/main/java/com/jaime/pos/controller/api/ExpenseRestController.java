@@ -31,6 +31,13 @@ public class ExpenseRestController
         return expenses;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Expense OK";
+    }
+
     @GetMapping("delete/{expenseId}")
     @ResponseBody
     public String delete(@PathVariable int expenseId)
