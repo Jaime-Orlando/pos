@@ -26,6 +26,13 @@ public class StoreRestController
         return stores;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Store OK";
+    }
+
     @GetMapping("delete/{storeId}")
     @ResponseBody
     public String delete(@PathVariable int storeId)
