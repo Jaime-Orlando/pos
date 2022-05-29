@@ -36,8 +36,11 @@ public class ProductRestControllerTest
     public void testList() throws Exception
     {
         mockMvc.perform(get("/product/list/running"))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Product OK")));
+                .andDo(print())
+                .andExpect(status()
+                        .isOk())
+                .andExpect(content()
+                        .string(containsString("Product OK")));
     }
 
 }

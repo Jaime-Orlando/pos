@@ -25,10 +25,14 @@ public class ClientRestControllerTest
     }
 
     @Test
-    public void testList() throws Exception {
+    public void testList() throws Exception
+    {
         mockMvc.perform(get("/client/list/running")).
-                andDo(print()).andExpect(status().isOk()).
-                andExpect(content().string(containsString("Client OK")));
+                andDo(print())
+                .andExpect(status()
+                        .isOk())
+                .andExpect(content()
+                        .string(containsString("Client OK")));
     }
 
 }

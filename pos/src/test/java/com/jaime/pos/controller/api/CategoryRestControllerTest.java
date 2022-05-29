@@ -29,7 +29,9 @@ public class CategoryRestControllerTest
     {
         mockMvc.perform(get("/category/list/running"))
                 .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Category OK")));
+                .andExpect(status()
+                        .isOk())
+                .andExpect(content()
+                        .string(containsString("Category OK")));
     }
 }
