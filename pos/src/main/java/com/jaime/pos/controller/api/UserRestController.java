@@ -27,6 +27,13 @@ public class UserRestController
         return users;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "User OK";
+    }
+
     @GetMapping("delete/{userId}")
     @ResponseBody
     public String delete(@PathVariable int userId)
