@@ -34,6 +34,13 @@ public class SaleRestController
         return sales;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Sale OK";
+    }
+
     @GetMapping("delete/{saleId}")
     @ResponseBody
     public String delete(@PathVariable int saleId)
