@@ -30,6 +30,13 @@ public class EmployeeRestController
         return employees;
     }
 
+    @GetMapping("list/running")
+    @ResponseBody
+    public String init()
+    {
+        return "Employee OK";
+    }
+
     @GetMapping("delete/{employeeId}")
     @ResponseBody
     public String delete(@PathVariable int employeeId)
