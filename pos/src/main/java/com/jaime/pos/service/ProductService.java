@@ -7,13 +7,36 @@ import org.springframework.stereotype.Service;
 import com.jaime.pos.model.ProductModel;
 
 @Service
-public class ProductService 
+public class ProductService implements ProductServiceI
 {
 
-	
-	public List<ProductModel> getAllProducts()
+	@Override
+	public List<ProductModel> findAll() 
 	{
+		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public ProductModel findBy(int id)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteBy(int id)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ProductModel update(ProductModel productModel) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
