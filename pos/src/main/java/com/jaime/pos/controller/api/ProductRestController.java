@@ -1,7 +1,8 @@
 package com.jaime.pos.controller.api;
 
-import com.jaime.pos.model.ProductModel;
 import org.springframework.web.bind.annotation.*;
+
+import com.jaime.pos.model.ProductModel;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
