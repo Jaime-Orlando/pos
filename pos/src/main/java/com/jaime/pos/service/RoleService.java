@@ -1,5 +1,6 @@
 package com.jaime.pos.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -12,8 +13,13 @@ public class RoleService implements RoleServiceI
 
 	@Override
 	public List<RoleModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<RoleModel> roles = new ArrayList<>();
+		RoleModel role = new RoleModel();
+		role.setId(1);
+		role.setName("Administrator");
+		role.setDescription("Has all privileges");
+		roles.add(role);
+		return roles;
 	}
 
 	@Override

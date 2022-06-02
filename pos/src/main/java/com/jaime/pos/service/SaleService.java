@@ -1,7 +1,10 @@
 package com.jaime.pos.service;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.model.Currency;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.SaleModel;
@@ -12,8 +15,20 @@ public class SaleService implements SaleServiceI
 
 	@Override
 	public List<SaleModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<SaleModel> sales = new ArrayList<>();
+		SaleModel sale = new SaleModel();
+		sale.setId(1);
+		sale.setAmount(2);
+		sale.setCurrency(Currency.MXN);
+		sale.setDate(LocalDateTime.now());
+		sale.setDetailId(1);
+		sale.setEmployeeId(1);
+		sale.setObservations("NONE");
+		sale.setStoreId(1);
+		sale.setTax(12.5f);
+		sale.setDiscount(5.0f);
+		sales.add(sale);
+		return sales;
 	}
 
 	@Override

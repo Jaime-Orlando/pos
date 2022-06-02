@@ -1,5 +1,7 @@
 package com.jaime.pos.service;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -12,8 +14,14 @@ public class UserService implements UserServiceI
 
 	@Override
 	public List<UserModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<UserModel> users = new ArrayList<>();
+		UserModel user = new UserModel();
+		user.setId(2);
+		user.setName("ben.freddy");
+		user.setLastAccess(LocalDateTime.now());
+		user.setRoleId(2);
+		users.add(user);
+		return users;
 	}
 
 	@Override

@@ -1,28 +1,25 @@
 package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.CategoryModel;
+import com.jaime.pos.service.CategoryServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/category/")
 public class CategoryRestController
 {
+    private final CategoryServiceI categoryService;
 
     @GetMapping("list" )
     @ResponseBody
     public List<CategoryModel> read()
     {
-        List<CategoryModel> categoryModels = new ArrayList<>();
-        CategoryModel categoryModel = new CategoryModel();
-        categoryModel.setId(1);
-        categoryModel.setDescription("Entertainment Content");
-        categoryModel.setName("Entertainment");
-        categoryModels.add(categoryModel);
-        return categoryModels;
+        return categoryService.findAll();
     }
 
     @GetMapping("list/running")

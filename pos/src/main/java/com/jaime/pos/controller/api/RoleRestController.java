@@ -1,28 +1,26 @@
 package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.RoleModel;
+import com.jaime.pos.service.RoleServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/role/")
 public class RoleRestController
 {
+
+    private final RoleServiceI roleService;
 
     @GetMapping("list")
     @ResponseBody
     public List<RoleModel> read()
     {
-        List<RoleModel> roles = new ArrayList<>();
-        RoleModel role = new RoleModel();
-        role.setId(1);
-        role.setName("Administrator");
-        role.setDescription("Has all privileges");
-        roles.add(role);
-        return roles;
+        return roleService.findAll();
     }
 
     @GetMapping("list/running")

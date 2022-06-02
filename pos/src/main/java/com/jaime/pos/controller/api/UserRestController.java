@@ -1,30 +1,27 @@
 package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.UserModel;
+import com.jaime.pos.service.UserServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/user/")
 public class UserRestController
 {
+
+    private final UserServiceI userService;
 
     @GetMapping("list")
     @ResponseBody
     public List<UserModel> read()
     {
-        List<UserModel> users = new ArrayList<>();
-        UserModel user = new UserModel();
-        user.setId(2);
-        user.setName("ben.freddy");
-        user.setLastAccess(LocalDateTime.now());
-        user.setRoleId(2);
-        users.add(user);
-        return users;
+       return userService.findAll();
     }
 
     @GetMapping("list/running")

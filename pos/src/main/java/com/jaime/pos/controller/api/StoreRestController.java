@@ -1,6 +1,8 @@
 package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.StoreModel;
+import com.jaime.pos.service.StoreServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
@@ -8,22 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/store/")
 public class StoreRestController
 {
 
+    private final StoreServiceI storeService;
     @GetMapping("list")
     @ResponseBody
     public List<StoreModel> read()
     {
-        List<StoreModel> stores = new ArrayList<>();
-        StoreModel store = new StoreModel();
-        store.setAddress("Bellevue 34");
-        store.setId(2);
-        store.setManagerId(3);
-        store.setName("BELLEVUE POINT 1");
-        stores.add(store);
-        return stores;
+        return storeService.findAll();
     }
 
     @GetMapping("list/running")

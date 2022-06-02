@@ -1,37 +1,26 @@
 package com.jaime.pos.controller.api;
 
-import com.jaime.pos.model.Currency;
 import com.jaime.pos.model.SaleModel;
+import com.jaime.pos.service.SaleServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/sale/")
 public class SaleRestController
 {
+
+    private final SaleServiceI saleService;
 
     @GetMapping("list")
     @ResponseBody
     public List<SaleModel> read()
     {
-        List<SaleModel> sales = new ArrayList<>();
-        SaleModel sale = new SaleModel();
-        sale.setId(1);
-        sale.setAmount(2);
-        sale.setCurrency(Currency.MXN);
-        sale.setDate(LocalDateTime.now());
-        sale.setDetailId(1);
-        sale.setEmployeeId(1);
-        sale.setObservations("NONE");
-        sale.setStoreId(1);
-        sale.setTax(12.5f);
-        sale.setDiscount(5.0f);
-        sales.add(sale);
-        return sales;
+        return saleService.findAll();
     }
 
     @GetMapping("list/running")

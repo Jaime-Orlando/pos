@@ -1,6 +1,8 @@
 package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.ProviderModel;
+import com.jaime.pos.service.ProviderServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
@@ -8,21 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/provider/")
 public class ProviderRestController
 {
+
+    private final ProviderServiceI providerService;
 
     @GetMapping("list")
     @ResponseBody
     public List<ProviderModel> read()
     {
-        List<ProviderModel> providers = new ArrayList<>();
-        ProviderModel provider = new ProviderModel();
-        provider.setId(1);
-        provider.setName("Woods L.C.");
-        provider.setAddress("Circuito 3");
-        providers.add(provider);
-        return providers;
+        return providerService.findAll();
     }
 
     @GetMapping("list/running")

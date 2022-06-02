@@ -1,33 +1,26 @@
 package com.jaime.pos.controller.api;
 
 import com.jaime.pos.model.EmployeeModel;
+import com.jaime.pos.service.EmployeeServiceI;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.MessageFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/employee/")
 public class EmployeeRestController
 {
+
+    private final EmployeeServiceI employeeService;
+
     @GetMapping("list")
     public List<EmployeeModel> read()
     {
-        List<EmployeeModel> employees = new ArrayList<>();
-        EmployeeModel employee = new EmployeeModel();
-        employee.setId(1);
-        employee.setBirthdate(LocalDate.of(1990,11,12));
-        employee.setEmail("alicia.ch@fl.com");
-        employee.setFirstName("Alicia");
-        employee.setPhone("336435677");
-        employee.setLastName("Chávez");
-        employee.setRfc("124234");
-        employee.setStoreId(1);
-        employee.setUserId(1);
-        employees.add(employee);
-        return employees;
+
+        return employeeService.findAll();
     }
 
     @GetMapping("list/running")

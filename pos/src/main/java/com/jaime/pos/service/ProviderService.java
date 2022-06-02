@@ -1,5 +1,6 @@
 package com.jaime.pos.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -12,8 +13,13 @@ public class ProviderService implements ProviderServiceI
 
 	@Override
 	public List<ProviderModel> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<ProviderModel> providers = new ArrayList<>();
+		ProviderModel provider = new ProviderModel();
+		provider.setId(1);
+		provider.setName("Woods L.C.");
+		provider.setAddress("Circuito 3");
+		providers.add(provider);
+		return providers;
 	}
 
 	@Override
