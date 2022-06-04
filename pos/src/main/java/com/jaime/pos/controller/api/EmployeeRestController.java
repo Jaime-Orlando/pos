@@ -19,7 +19,6 @@ public class EmployeeRestController
     @GetMapping("list")
     public List<EmployeeModel> read()
     {
-
         return employeeService.findAll();
     }
 

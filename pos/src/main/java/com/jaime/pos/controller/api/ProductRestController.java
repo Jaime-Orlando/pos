@@ -4,6 +4,8 @@ import com.jaime.pos.service.ProductServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import com.jaime.pos.model.ProductListForm;
+import com.jaime.pos.model.ProductListView;
 import com.jaime.pos.model.ProductModel;
 
 import java.text.MessageFormat;
@@ -16,11 +18,14 @@ public class ProductRestController
 {
     private final ProductServiceI productService;
 
-    @GetMapping(value = "list")
+    @GetMapping("list")
     @ResponseBody
-    public List<ProductModel> read()
+    public ProductListView read(@ModelAttribute ProductListForm productListForm)
     {
-        return productService.findAll();
+    	ProductListView productListView = new ProductListView();
+    	productListView.setDescription("This is just a random product list");
+    	productListView.setItems(productService.findAll());
+    	return productListView;
     }
 
     @GetMapping("list/running")

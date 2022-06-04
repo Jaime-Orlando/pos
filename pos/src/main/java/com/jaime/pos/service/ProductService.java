@@ -26,6 +26,7 @@ public class ProductService implements ProductServiceI
 		productModel.setInStock(2);
 		productModel.setSku("123562RTX");
 		list.add(productModel);
+		list.add(productModel);
 		return list;
 	}
 
