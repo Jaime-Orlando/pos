@@ -3,13 +3,24 @@ package com.jaime.pos.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.ProviderDao;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.ProviderModel;
 
 @Service
+@AllArgsConstructor
 public class ProviderService implements ProviderServiceI
 {
+
+	private final ProviderDao providerDao;
+
+
+	@Override
+	public void save(ProviderModel providerModel) {
+
+	}
 
 	@Override
 	public List<ProviderModel> findAll() {
@@ -29,15 +40,15 @@ public class ProviderService implements ProviderServiceI
 	}
 
 	@Override
-	public boolean deleteBy(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public ProviderModel update(ProviderModel providerModel) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean deleteBy(int id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

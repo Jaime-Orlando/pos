@@ -6,8 +6,11 @@ import com.jaime.pos.model.ProviderModel;
 
 public interface ProviderServiceI
 {
-	public List<ProviderModel> findAll();
-	public ProviderModel findBy(int id);
-	public boolean deleteBy(int id);
-	public ProviderModel update(ProviderModel providerModel);
+	void save(ProviderModel providerModel);
+	List<ProviderModel> findAll();
+	ProviderModel findBy(int id);
+	boolean deleteBy(int id);
+	ProviderModel update(ProviderModel providerModel);
+
+
 }

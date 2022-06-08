@@ -1,5 +1,6 @@
 package com.jaime.pos.controller.api;
 
+import com.jaime.pos.controller.api.form.ProviderForm;
 import com.jaime.pos.model.ProviderModel;
 import com.jaime.pos.service.ProviderServiceI;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,24 @@ public class ProviderRestController
 
     private final ProviderServiceI providerService;
 
+    @PostMapping("new")
+    @ResponseBody
+    public ProviderModel create(@ModelAttribute ProviderForm providerForm)
+    {
+        ProviderModel providerModel = convertToProviderModel(providerForm);
+        providerService.save(providerModel);
+        return providerModel;
+    }
+
+    private ProviderModel convertToProviderModel(ProviderForm providerForm)
+    {
+        ProviderModel providerModel = new ProviderModel();
+        providerModel.setId(providerForm.getId());
+        providerModel.setName(providerForm.getName());
+        providerModel.setAddress(providerForm.getAddress());
+        return providerModel;
+    }
+
     @GetMapping("list")
     @ResponseBody
     public List<ProviderModel> read()
@@ -31,20 +50,6 @@ public class ProviderRestController
         return "Provider OK";
     }
 
-    @GetMapping("delete/{providerId}")
-    @ResponseBody
-    public String delete(@PathVariable int providerId)
-    {
-        return MessageFormat.format("Successfully deleted provider with ID: {0}",providerId);
-    }
-
-    @PostMapping("new")
-    @ResponseBody
-    public ProviderModel create(@ModelAttribute ProviderModel providerModel)
-    {
-        return providerModel;
-    }
-
     @PostMapping("update")
     @ResponseBody
     public ProviderModel update(@ModelAttribute ProviderModel providerModel)
@@ -52,5 +57,11 @@ public class ProviderRestController
         return providerModel;
     }
 
+    @GetMapping("delete/{providerId}")
+    @ResponseBody
+    public String delete(@PathVariable int providerId)
+    {
+        return MessageFormat.format("Successfully deleted provider with ID: {0}",providerId);
+    }
 
 }
