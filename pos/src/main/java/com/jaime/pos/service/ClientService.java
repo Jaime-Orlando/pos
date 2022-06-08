@@ -4,17 +4,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.ClientDao;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.ClientModel;
 
 @Service
+@AllArgsConstructor
 public class ClientService implements ClientServiceI 
 {
 
-
+	private final ClientDao clientDao;
 	@Override
-	public void save(ClientModel clientModel) {
+	public void save(ClientModel clientModel)
+	{
 
 	}
 

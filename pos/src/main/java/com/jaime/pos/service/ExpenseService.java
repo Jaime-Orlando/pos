@@ -4,14 +4,24 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.ExpenseDao;
 import com.jaime.pos.model.Currency;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.ExpenseModel;
 
 @Service
+@AllArgsConstructor
 public class ExpenseService implements ExpenseServiceI
 {
+	private final ExpenseDao expenseDao;
+
+	@Override
+	public void save(ExpenseModel expenseModel)
+	{
+
+	}
 
 	@Override
 	public List<ExpenseModel> findAll() {
@@ -35,15 +45,16 @@ public class ExpenseService implements ExpenseServiceI
 	}
 
 	@Override
+	public ExpenseModel update(ExpenseModel expenseModel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
 	public boolean deleteBy(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public ExpenseModel update(ExpenseModel expenseModel) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 }

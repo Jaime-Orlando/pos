@@ -4,16 +4,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.EmployeeDao;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.EmployeeModel;
 
 @Service
+@AllArgsConstructor
 public class EmployeeService implements EmployeeServiceI
 {
 
+	private final EmployeeDao employeeDao;
 	@Override
-	public void save(EmployeeModel employeeModel) {
+	public void save(EmployeeModel employeeModel)
+	{
 
 	}
 

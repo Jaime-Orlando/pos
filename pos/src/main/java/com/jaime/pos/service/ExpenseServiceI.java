@@ -6,8 +6,11 @@ import com.jaime.pos.model.ExpenseModel;
 
 public interface ExpenseServiceI 
 {
-	public List<ExpenseModel> findAll();
-	public ExpenseModel findBy(int id);
-	public boolean deleteBy(int id);
-	public ExpenseModel update(ExpenseModel expenseModel);
+	void save(ExpenseModel expenseModel);
+	List<ExpenseModel> findAll();
+	ExpenseModel findBy(int id);
+	boolean deleteBy(int id);
+	ExpenseModel update(ExpenseModel expenseModel);
+
+
 }
