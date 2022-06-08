@@ -1,14 +1,23 @@
 package com.jaime.pos.service;
 
+import com.jaime.pos.dao.CategoryDao;
 import com.jaime.pos.model.CategoryModel;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class CategoryService implements  CategoryServiceI
 {
+
+    private final CategoryDao categoryDao;
+    @Override
+    public void save(CategoryModel categoryModel) {
+
+    }
 
     @Override
     public List<CategoryModel> findAll() {
@@ -35,4 +44,6 @@ public class CategoryService implements  CategoryServiceI
     public CategoryModel update(CategoryModel categoryModel) {
         return null;
     }
+
+
 }

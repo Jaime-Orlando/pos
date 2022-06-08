@@ -61,13 +61,6 @@ public class ProductRestController
         return "Product OK";
     }
 
-    @GetMapping("delete/{productId}")
-    @ResponseBody
-    public String delete(@PathVariable int productId)
-    {
-        return MessageFormat.format("Successfully deleted Product with id {0}", productId);
-    }
-
     @PostMapping("update")
     @ResponseBody
     public ProductModel update(@ModelAttribute ProductModel productModel)
@@ -75,5 +68,11 @@ public class ProductRestController
         return productModel;
     }
 
+    @GetMapping("delete/{productId}")
+    @ResponseBody
+    public String delete(@PathVariable int productId)
+    {
+        return MessageFormat.format("Successfully deleted Product with id {0}", productId);
+    }
 
 }

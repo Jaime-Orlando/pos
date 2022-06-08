@@ -10,4 +10,6 @@ public interface CategoryServiceI
     public CategoryModel findBy(int id);
     public boolean deleteBy(int id);
     public CategoryModel update(CategoryModel categoryModel);
+
+    void save(CategoryModel categoryModel);
 }
