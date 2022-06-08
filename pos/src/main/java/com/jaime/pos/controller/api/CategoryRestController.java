@@ -20,12 +20,12 @@ public class CategoryRestController
     @ResponseBody
     public CategoryModel create(@ModelAttribute CategoryForm categoryForm)
     {
-        CategoryModel categoryModel = convertToCategoryMode(categoryForm);
+        CategoryModel categoryModel = convertToCategoryModel(categoryForm);
         categoryService.save(categoryModel);
         return categoryModel;
     }
 
-    private CategoryModel convertToCategoryMode(CategoryForm categoryForm)
+    private CategoryModel convertToCategoryModel(CategoryForm categoryForm)
     {
         CategoryModel categoryModel = new CategoryModel();
         categoryModel.setId(categoryForm.getId());

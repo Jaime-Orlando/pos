@@ -6,9 +6,11 @@ import com.jaime.pos.model.ClientModel;
 
 public interface ClientServiceI
 {
-	public List<ClientModel> findAll();
-	public ClientModel findBy(int id);
-	public boolean deleteBy(int id);
-	public ClientModel update(ClientModel clientModel);
-	
+	void save(ClientModel clientModel);
+	List<ClientModel> findAll();
+	ClientModel findBy(int id);
+	ClientModel update(ClientModel clientModel);
+	boolean deleteBy(int id);
+
+
 }
