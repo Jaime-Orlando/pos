@@ -3,13 +3,24 @@ package com.jaime.pos.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.RoleDao;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.RoleModel;
 
 @Service
+@AllArgsConstructor
 public class RoleService implements RoleServiceI
 {
+
+	private final RoleDao roleDao;
+
+	@Override
+	public void save(RoleModel roleModel)
+	{
+
+	}
 
 	@Override
 	public List<RoleModel> findAll() {
@@ -27,17 +38,17 @@ public class RoleService implements RoleServiceI
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Override
+	public RoleModel update(RoleModel roleModel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	@Override
 	public boolean deleteBy(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public RoleModel update(RoleModel roleModel) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

@@ -6,8 +6,12 @@ import com.jaime.pos.model.RoleModel;
 
 public interface RoleServiceI
 {
-	public List<RoleModel> findAll();
-	public RoleModel findBy(int id);
-	public boolean deleteBy(int id);
-	public RoleModel update(RoleModel roleModel);
+	void save(RoleModel roleModel);
+	List<RoleModel> findAll();
+	RoleModel findBy(int id);
+	RoleModel update(RoleModel roleModel);
+	boolean deleteBy(int id);
+
+
+
 }
