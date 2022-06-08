@@ -13,6 +13,11 @@ public class EmployeeService implements EmployeeServiceI
 {
 
 	@Override
+	public void save(EmployeeModel employeeModel) {
+
+	}
+
+	@Override
 	public List<EmployeeModel> findAll() {
 		List<EmployeeModel> employees = new ArrayList<>();
 		EmployeeModel employee = new EmployeeModel();
@@ -36,15 +41,16 @@ public class EmployeeService implements EmployeeServiceI
 	}
 
 	@Override
+	public EmployeeModel update(EmployeeModel employeeModel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
 	public boolean deleteBy(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public EmployeeModel update(EmployeeModel employeeModel) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 }

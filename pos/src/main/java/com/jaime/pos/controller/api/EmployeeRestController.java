@@ -1,5 +1,6 @@
 package com.jaime.pos.controller.api;
 
+import com.jaime.pos.controller.api.form.EmployeeForm;
 import com.jaime.pos.model.EmployeeModel;
 import com.jaime.pos.service.EmployeeServiceI;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,30 @@ public class EmployeeRestController
 
     private final EmployeeServiceI employeeService;
 
+    @PostMapping("new")
+    @ResponseBody
+    public EmployeeModel create(@ModelAttribute EmployeeForm employeeForm)
+    {
+        EmployeeModel employeeModel = convertToEmployeeModel(employeeForm);
+        employeeService.save(employeeModel);
+        return employeeModel;
+    }
+
+    private EmployeeModel convertToEmployeeModel(EmployeeForm employeeForm)
+    {
+        EmployeeModel employeeModel = new EmployeeModel();
+        employeeModel.setId(employeeForm.getId());
+        employeeModel.setFirstName(employeeForm.getFirstName());
+        employeeModel.setLastName(employeeForm.getLastName());
+        employeeModel.setPhone(employeeForm.getPhone());
+        employeeModel.setEmail(employeeForm.getEmail());
+        employeeModel.setRfc(employeeForm.getRfc());
+        employeeModel.setBirthdate(employeeForm.getBirthdate());
+        employeeModel.setStoreId(employeeForm.getStoreId());
+        employeeModel.setUserId(employeeForm.getUserId());
+        return employeeModel;
+    }
+
     @GetMapping("list")
     public List<EmployeeModel> read()
     {
@@ -29,20 +54,6 @@ public class EmployeeRestController
         return "Employee OK";
     }
 
-    @GetMapping("delete/{employeeId}")
-    @ResponseBody
-    public String delete(@PathVariable int employeeId)
-    {
-        return MessageFormat.format("Successfully deleted employee with id: {0}", employeeId);
-    }
-
-    @PostMapping("new")
-    @ResponseBody
-    public EmployeeModel create(@ModelAttribute EmployeeModel employeeModel)
-    {
-        return employeeModel;
-    }
-
     @PostMapping("update")
     @ResponseBody
     public EmployeeModel update(@ModelAttribute EmployeeModel employeeModel)
@@ -50,5 +61,11 @@ public class EmployeeRestController
         return employeeModel;
     }
 
+    @GetMapping("delete/{employeeId}")
+    @ResponseBody
+    public String delete(@PathVariable int employeeId)
+    {
+        return MessageFormat.format("Successfully deleted employee with id: {0}", employeeId);
+    }
 
 }

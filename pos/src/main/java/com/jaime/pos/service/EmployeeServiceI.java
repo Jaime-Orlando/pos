@@ -6,8 +6,9 @@ import com.jaime.pos.model.EmployeeModel;
 
 public interface EmployeeServiceI
 {
-	public List<EmployeeModel> findAll();
-	public EmployeeModel findBy(int id);
-	public boolean deleteBy(int id);
-	public EmployeeModel update(EmployeeModel employeeModel);
+	void save(EmployeeModel employeeModel);
+	List<EmployeeModel> findAll();
+	EmployeeModel findBy(int id);
+	EmployeeModel update(EmployeeModel employeeModel);
+	boolean deleteBy(int id);
 }
