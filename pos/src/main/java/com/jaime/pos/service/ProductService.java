@@ -3,14 +3,23 @@ package com.jaime.pos.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.ProductDao;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.ProductModel;
 
 @Service
+@AllArgsConstructor
 public class ProductService implements ProductServiceI
 {
 
+	private final ProductDao productDao;
+	@Override
+	public void save(ProductModel productModel)
+	{
+
+	}
 	@Override
 	public List<ProductModel> findAll() 
 	{
@@ -50,6 +59,8 @@ public class ProductService implements ProductServiceI
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 
 }

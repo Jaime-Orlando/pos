@@ -6,8 +6,11 @@ import com.jaime.pos.model.ProductModel;
 
 public interface ProductServiceI {
 
-	public List<ProductModel> findAll();
-	public ProductModel findBy(int id);
-	public boolean deleteBy(int id);
-	public ProductModel update(ProductModel productModel);
+	void save(ProductModel productModel);
+	List<ProductModel> findAll();
+	ProductModel findBy(int id);
+	boolean deleteBy(int id);
+	ProductModel update(ProductModel productModel);
+
+
 }
