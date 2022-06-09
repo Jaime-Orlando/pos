@@ -18,7 +18,6 @@ import java.util.List;
 public class ProductRestController
 {
     private final ProductServiceI productService;
-
     @PostMapping("new")
     @ResponseBody
     public ProductModel create(@ModelAttribute ProductForm productForm)
@@ -27,7 +26,6 @@ public class ProductRestController
         productService.save(productModel);
         return productModel;
     }
-
     private ProductModel convertToProductModel(ProductForm productForm)
     {
         ProductModel productModel = new ProductModel();
@@ -43,7 +41,6 @@ public class ProductRestController
         productModel.setCategoryId(productForm.getCategoryId());
         return productModel;
     }
-
     @GetMapping("list")
     @ResponseBody
     public ProductListView read(@ModelAttribute ProductListForm productListForm)
@@ -53,26 +50,16 @@ public class ProductRestController
     	productListView.setItems(productService.findAll());
     	return productListView;
     }
-
-    @GetMapping("list/running")
-    @ResponseBody
-    public String init()
-    {
-        return "Product OK";
-    }
-
     @PostMapping("update")
     @ResponseBody
     public ProductModel update(@ModelAttribute ProductModel productModel)
     {
-        return productModel;
+        return productService.update(productModel);
     }
-
     @GetMapping("delete/{productId}")
     @ResponseBody
-    public String delete(@PathVariable int productId)
+    public boolean deleteBy(@PathVariable int productId)
     {
-        return MessageFormat.format("Successfully deleted Product with id {0}", productId);
+        return productService.deleteBy(productId);
     }
-
 }
