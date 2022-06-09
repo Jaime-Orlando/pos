@@ -6,8 +6,10 @@ import com.jaime.pos.model.UserModel;
 
 public interface UserServiceI 
 {
-	public List<UserModel> findAll();
-	public UserModel findBy(int id);
-	public boolean deleteBy(int id);
-	public UserModel update(UserModel userModel);
+	void save(UserModel userModel);
+	List<UserModel> findAll();
+	UserModel findBy(int id);
+	UserModel update(UserModel userModel);
+	boolean deleteBy(int id);
+
 }

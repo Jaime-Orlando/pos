@@ -4,13 +4,21 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaime.pos.dao.UserDao;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.UserModel;
 
 @Service
+@AllArgsConstructor
 public class UserService implements UserServiceI
 {
+	private final UserDao userDao;
+	@Override
+	public void save(UserModel userModel) {
+
+	}
 
 	@Override
 	public List<UserModel> findAll() {
@@ -29,17 +37,15 @@ public class UserService implements UserServiceI
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public boolean deleteBy(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	@Override
 	public UserModel update(UserModel userModel) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public boolean deleteBy(int id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
