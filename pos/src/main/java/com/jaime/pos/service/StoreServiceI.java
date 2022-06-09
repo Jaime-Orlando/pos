@@ -6,8 +6,10 @@ import com.jaime.pos.model.StoreModel;
 
 public interface StoreServiceI 
 {
-	public List<StoreModel> findAll();
-	public StoreModel findBy(int id);
-	public boolean deleteBy(int id);
-	public StoreModel update(StoreModel storeModel);
+	void save(StoreModel storeModel);
+	List<StoreModel> findAll();
+	StoreModel findBy(int id);
+	StoreModel update(StoreModel storeModel);
+	boolean deleteBy(int id);
+
 }
