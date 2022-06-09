@@ -6,8 +6,12 @@ import com.jaime.pos.model.SaleModel;
 
 public interface SaleServiceI
 {
-	public List<SaleModel> findAll();
-	public SaleModel findBy(int id);
-	public boolean deleteBy(int id);
-	public SaleModel update(SaleModel saleModel);
+	void save(SaleModel saleModel);
+	List<SaleModel> findAll();
+	SaleModel findBy(int id);
+	SaleModel update(SaleModel saleModel);
+	boolean deleteBy(int id);
+
+
+
 }
