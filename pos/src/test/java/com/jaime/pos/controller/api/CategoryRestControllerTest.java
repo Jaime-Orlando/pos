@@ -14,7 +14,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,7 @@ public class CategoryRestControllerTest {
     CategoryServiceI categoryService;
 
     @BeforeEach
-    public void setup(WebApplicationContext context) {
+    public void setup() {
         mockMvc = MockMvcBuilders.standaloneSetup(new CategoryRestController(categoryService)).build();
         List<CategoryModel> categoryModels = findAll();
         when(categoryService.findAll()).thenReturn(categoryModels);
