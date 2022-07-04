@@ -24,14 +24,15 @@ COLLATE='utf8mb4_general_ci'
 ;
 
 CREATE TABLE `client` (
-	`id` INT NOT NULL,
-	`firstName` VARCHAR(50) NOT NULL DEFAULT '',
-	`middleName` VARCHAR(50) NOT NULL DEFAULT '',
-	`lastName` VARCHAR(50) NOT NULL DEFAULT '',
-	`sex` CHAR(1) NOT NULL DEFAULT '',
-	`rfc` VARCHAR(50) NOT NULL DEFAULT '',
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`first_name` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`middle_name` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`last_name` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`sex` CHAR(1) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`rfc` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
 	`birthdate` DATE NULL DEFAULT NULL,
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`) USING BTREE
 )
 COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
 ;
