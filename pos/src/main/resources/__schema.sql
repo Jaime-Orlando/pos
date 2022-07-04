@@ -13,3 +13,25 @@ CREATE TABLE `product` (
 )
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB;
+
+CREATE TABLE `category` (
+	`id` INT(255) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NULL DEFAULT NULL,
+	`description` VARCHAR(100) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8mb4_general_ci'
+;
+
+CREATE TABLE `client` (
+	`id` INT NOT NULL,
+	`firstName` VARCHAR(50) NOT NULL DEFAULT '',
+	`middleName` VARCHAR(50) NOT NULL DEFAULT '',
+	`lastName` VARCHAR(50) NOT NULL DEFAULT '',
+	`sex` CHAR(1) NOT NULL DEFAULT '',
+	`rfc` VARCHAR(50) NOT NULL DEFAULT '',
+	`birthdate` DATE NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8mb4_general_ci'
+;
