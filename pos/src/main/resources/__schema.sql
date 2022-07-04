@@ -36,3 +36,18 @@ CREATE TABLE `client` (
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
+
+CREATE TABLE `employee` (
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`first_name` VARCHAR(50) NULL DEFAULT '',
+	`last_name` VARCHAR(50) NULL DEFAULT '',
+	`phone` VARCHAR(13) NULL DEFAULT '',
+	`email` VARCHAR(50) NULL DEFAULT '',
+	`rfc` VARCHAR(50) NULL DEFAULT '',
+	`birthdate` DATE NULL DEFAULT NULL,
+	`store_id` INT(255) NULL DEFAULT NULL,
+	`user_id` INT(255) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8mb4_general_ci'
+;
