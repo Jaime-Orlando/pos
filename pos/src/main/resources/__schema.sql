@@ -51,3 +51,17 @@ CREATE TABLE `employee` (
 )
 COLLATE='utf8mb4_general_ci'
 ;
+
+CREATE TABLE `expense` (
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`concept` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`date` DATE NULL DEFAULT NULL,
+	`employee_id` INT(255) NULL DEFAULT NULL,
+	`currency` ENUM('USD','EUR','MXN','YEN','LB') NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`store_id` INT(255) NULL DEFAULT NULL,
+	`amount` DOUBLE NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+;
