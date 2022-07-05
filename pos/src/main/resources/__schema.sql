@@ -103,3 +103,14 @@ CREATE TABLE `sale` (
 COLLATE='utf8mb4_general_ci'
 ;
 
+CREATE TABLE `store` (
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL DEFAULT '',
+	`manager_id` INT(255) NOT NULL,
+	`address` VARCHAR(100) NOT NULL DEFAULT '',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8mb4_general_ci'
+;
+
+
