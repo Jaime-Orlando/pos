@@ -65,3 +65,41 @@ CREATE TABLE `expense` (
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
+
+CREATE TABLE `provider` (
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`address` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+;
+
+CREATE TABLE `role` (
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`description` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`name` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+;
+
+CREATE TABLE `sale` (
+	`id` INT(255) NOT NULL,
+	`detail_id` INT(255) NOT NULL,
+	`employee_id` INT(255) NOT NULL,
+	`discount` DOUBLE NOT NULL,
+	`amount` INT(255) NOT NULL,
+	`currency` ENUM('USD','EUR','MXN','YEN','LB') NOT NULL,
+	`client_id` INT(255) NOT NULL,
+	`tax` DOUBLE NOT NULL,
+	`observations` VARCHAR(100) NOT NULL DEFAULT '',
+	`store_id` INT(255) NOT NULL,
+	`date` DATE NOT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8mb4_general_ci'
+;
+
