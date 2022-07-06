@@ -46,7 +46,7 @@ public class ProductRestController
     public ProductListView read(@ModelAttribute ProductListForm productListForm)
     {
     	ProductListView productListView = new ProductListView();
-    	productListView.setDescription("This is just a random product list");
+    	productListView.setDescription("This is the list of all the products");
     	productListView.setItems(productService.findAll());
     	return productListView;
     }

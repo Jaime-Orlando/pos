@@ -8,9 +8,9 @@ public interface ProductServiceI {
 
 	void save(ProductModel productModel);
 	List<ProductModel> findAll();
+	List<ProductModel> findAll_();
 	ProductModel findBy(int id);
 	boolean deleteBy(int id);
 	ProductModel update(ProductModel productModel);
-
-
+	
 }

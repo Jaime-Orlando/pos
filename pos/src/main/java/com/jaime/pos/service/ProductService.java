@@ -22,7 +22,7 @@ public class ProductService implements ProductServiceI
 
 	}
 	@Override
-	public List<ProductModel> findAll() 
+	public List<ProductModel> findAll_() 
 	{
 		List<ProductModel> list = new ArrayList<>();
 		ProductModel productModel = new ProductModel();
@@ -38,6 +38,12 @@ public class ProductService implements ProductServiceI
 		list.add(productModel);
 		list.add(productModel);
 		return list;
+	}
+	
+	@Override
+	public List<ProductModel> findAll()
+	{
+		return (List<ProductModel>) productDao.findAll();
 	}
 
 	@Override
