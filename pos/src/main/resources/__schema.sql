@@ -113,4 +113,13 @@ CREATE TABLE `store` (
 COLLATE='utf8mb4_general_ci'
 ;
 
+CREATE TABLE `user` (
+	`id` INT(255) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',
+	`last_access` DATETIME NOT NULL,
+	`role_id` INT(255) NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+;
 
