@@ -2,11 +2,13 @@ package com.jaime.pos.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "product")
 public class ProductModel {
 	@Id
 	private long id;

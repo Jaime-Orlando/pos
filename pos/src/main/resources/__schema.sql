@@ -3,16 +3,18 @@ CREATE TABLE `product` (
 	`name` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_general_ci',
 	`description` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_general_ci',
 	`price` DOUBLE UNSIGNED ZEROFILL NOT NULL,
-	`instock` INT(255) UNSIGNED ZEROFILL NOT NULL,
-	`minstock` INT(255) UNSIGNED ZEROFILL NOT NULL,
-	`barcode` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`in_stock` INT(255) UNSIGNED ZEROFILL NOT NULL,
+	`min_stock` INT(255) UNSIGNED ZEROFILL NOT NULL,
+	`bar_code` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_general_ci',
 	`sku` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_general_ci',
-	`imguri` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',
-	`categoryid` INT(255) UNSIGNED ZEROFILL NOT NULL,
+	`img_uri` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`category_id` INT(255) UNSIGNED ZEROFILL NOT NULL,
 	PRIMARY KEY (`id`) USING BTREE
 )
 COLLATE='utf8mb4_general_ci'
-ENGINE=InnoDB;
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
 
 CREATE TABLE `category` (
 	`id` INT(255) UNSIGNED NOT NULL AUTO_INCREMENT,
