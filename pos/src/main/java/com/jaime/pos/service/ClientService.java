@@ -4,7 +4,6 @@ import com.jaime.pos.dao.ClientDao;
 import com.jaime.pos.model.ClientModel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +18,16 @@ public class ClientService implements ClientServiceI {
     public void save(ClientModel clientModel) {
 
     }
+    
+    @Override
+    public List<ClientModel> findAll()
+    {
+    	return (List<ClientModel>) clientDao.findAll();
+    }
 
     @Override
-    public List<ClientModel> findAll() {
+    public List<ClientModel> findAll_() 
+    {
         List<ClientModel> clients = new ArrayList<>();
         ClientModel client = new ClientModel();
         client.setId(1);
@@ -36,19 +42,22 @@ public class ClientService implements ClientServiceI {
     }
 
     @Override
-    public ClientModel findBy(int id) {
+    public ClientModel findBy(int id)
+    {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public ClientModel update(ClientModel clientModel) {
+    public ClientModel update(ClientModel clientModel) 
+    {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public boolean deleteBy(int id) {
+    public boolean deleteBy(int id) 
+    {
         // TODO Auto-generated method stub
         return false;
     }
