@@ -4,7 +4,6 @@ import com.jaime.pos.dao.CategoryDao;
 import com.jaime.pos.model.CategoryModel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +14,14 @@ public class CategoryService implements  CategoryServiceI
 
     private final CategoryDao categoryDao;
     @Override
-    public void save(CategoryModel categoryModel) {
+    public void save(CategoryModel categoryModel) 
+    {
 
     }
 
     @Override
-    public List<CategoryModel> findAll() {
+    public List<CategoryModel> findAll_() 
+    {
         List<CategoryModel> categoryModels = new ArrayList<>();
         CategoryModel categoryModel = new CategoryModel();
         categoryModel.setId(1);
@@ -29,19 +30,28 @@ public class CategoryService implements  CategoryServiceI
         categoryModels.add(categoryModel);
         return categoryModels;
     }
+    
+    @Override
+    public List<CategoryModel> findAll()
+    {
+    	return (List<CategoryModel>)categoryDao.findAll();
+    }
 
     @Override
-    public CategoryModel findBy(int id) {
+    public CategoryModel findBy(int id) 
+    {
         return null;
     }
 
     @Override
-    public boolean deleteBy(int id) {
+    public boolean deleteBy(int id)
+    {
         return false;
     }
 
     @Override
-    public CategoryModel update(CategoryModel categoryModel) {
+    public CategoryModel update(CategoryModel categoryModel)
+    {
         return null;
     }
 
