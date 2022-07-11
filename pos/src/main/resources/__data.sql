@@ -8,3 +8,4 @@ INSERT INTO `pos_db`.`provider` (`name`, `address`) VALUES ('Metal Providers', '
 INSERT INTO `pos_db`.`role` (`description`, `name`) VALUES ('Has all privileges', 'admin');
 INSERT INTO `pos_db`.`sale` (`detail_id`, `employee_id`, `discount`, `amount`, `currency`, `client_id`, `tax`, `observations`, `store_id`, `date`) VALUES ('1', '1', '100.0', '25', 'EUR', '1', '16.5', 'none', '1', '2022-07-10');
 INSERT INTO `pos_db`.`store` (`name`, `manager_id`, `address`) VALUES ('Store 1', '1', 'Washington 900');
+INSERT INTO `pos_db`.`user` (`name`, `last_access`, `role_id`) VALUES ('Gina_123', '2022-07-11 13:35:16', '2');
