@@ -1,12 +1,17 @@
 package com.jaime.pos.model;
 
 import lombok.Data;
-
 import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "employee")
 @Data
 public class EmployeeModel
 {
+	@Id
 	private int id;
 	private String firstName;
 	private String lastName;

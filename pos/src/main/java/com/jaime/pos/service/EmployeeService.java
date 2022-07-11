@@ -3,11 +3,9 @@ package com.jaime.pos.service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.jaime.pos.dao.EmployeeDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import com.jaime.pos.model.EmployeeModel;
 
 @Service
@@ -23,7 +21,13 @@ public class EmployeeService implements EmployeeServiceI
 	}
 
 	@Override
-	public List<EmployeeModel> findAll() {
+	public List<EmployeeModel> findAll()
+	{
+		return (List<EmployeeModel>) employeeDao.findAll();
+	}
+	
+	@Override
+	public List<EmployeeModel> findAll_() {
 		List<EmployeeModel> employees = new ArrayList<>();
 		EmployeeModel employee = new EmployeeModel();
 		employee.setId(1);
