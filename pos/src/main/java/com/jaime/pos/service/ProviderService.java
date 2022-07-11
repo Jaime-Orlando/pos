@@ -2,11 +2,9 @@ package com.jaime.pos.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.jaime.pos.dao.ProviderDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import com.jaime.pos.model.ProviderModel;
 
 @Service
@@ -18,12 +16,20 @@ public class ProviderService implements ProviderServiceI
 
 
 	@Override
-	public void save(ProviderModel providerModel) {
+	public void save(ProviderModel providerModel)
+	{
 
+	}
+	
+	@Override
+	public List<ProviderModel> findAll() 
+	{
+		return (List<ProviderModel>) providerDao.findAll();
 	}
 
 	@Override
-	public List<ProviderModel> findAll() {
+	public List<ProviderModel> findAll_()
+	{
 		List<ProviderModel> providers = new ArrayList<>();
 		ProviderModel provider = new ProviderModel();
 		provider.setId(1);
@@ -34,21 +40,25 @@ public class ProviderService implements ProviderServiceI
 	}
 
 	@Override
-	public ProviderModel findBy(int id) {
+	public ProviderModel findBy(int id) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ProviderModel update(ProviderModel providerModel) {
+	public ProviderModel update(ProviderModel providerModel) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean deleteBy(int id) {
+	public boolean deleteBy(int id) 
+	{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 }

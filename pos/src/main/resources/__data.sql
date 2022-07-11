@@ -4,3 +4,4 @@ INSERT INTO `pos_db`.`client` (`first_name`, `last_name`, `sex`, `rfc`, `birthda
 SELECT `id`, `first_name`, `last_name`, `phone`, `email`, `rfc`, `birthdate`, `store_id`, `user_id` FROM `pos_db`.`employee` WHERE  `id`=1;
 UPDATE `pos_db`.`employee` SET `first_name`='john', `last_name`='jpa', `phone`='5555555', `email`='jpa@jpa.com', `rfc`='1234566' WHERE  `id`=1;
 INSERT INTO `pos_db`.`expense` (`concept`, `date`, `employee_id`, `currency`, `store_id`, `amount`) VALUES ('Electricity', '2022-07-10', '1', 'MXN', '1', '1000');
+INSERT INTO `pos_db`.`provider` (`name`, `address`) VALUES ('Metal Providers', 'Washington 22');
