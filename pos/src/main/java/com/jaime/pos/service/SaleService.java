@@ -3,12 +3,10 @@ package com.jaime.pos.service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.jaime.pos.dao.SaleDao;
 import com.jaime.pos.model.Currency;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import com.jaime.pos.model.SaleModel;
 
 @Service
@@ -22,9 +20,16 @@ public class SaleService implements SaleServiceI
 	{
 
 	}
+	
+	@Override
+	public List<SaleModel> findAll() 
+	{
+		return (List<SaleModel>) saleDao.findAll();
+	}
 
 	@Override
-	public List<SaleModel> findAll() {
+	public List<SaleModel> findAll_() 
+	{
 		List<SaleModel> sales = new ArrayList<>();
 		SaleModel sale = new SaleModel();
 		sale.setId(1);
@@ -42,22 +47,24 @@ public class SaleService implements SaleServiceI
 	}
 
 	@Override
-	public SaleModel findBy(int id) {
+	public SaleModel findBy(int id) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public SaleModel update(SaleModel saleModel) {
+	public SaleModel update(SaleModel saleModel) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 	@Override
-	public boolean deleteBy(int id) {
+	public boolean deleteBy(int id) 
+	{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-
 
 }

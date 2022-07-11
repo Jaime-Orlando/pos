@@ -8,10 +8,8 @@ public interface SaleServiceI
 {
 	void save(SaleModel saleModel);
 	List<SaleModel> findAll();
+	List<SaleModel> findAll_();
 	SaleModel findBy(int id);
 	SaleModel update(SaleModel saleModel);
 	boolean deleteBy(int id);
-
-
-
 }
