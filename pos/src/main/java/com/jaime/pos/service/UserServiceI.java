@@ -11,5 +11,4 @@ public interface UserServiceI
 	UserModel findBy(int id);
 	UserModel update(UserModel userModel);
 	boolean deleteBy(int id);
-
 }
