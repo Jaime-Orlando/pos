@@ -10,13 +10,15 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class ClientService implements ClientServiceI {
+public class ClientService implements ClientServiceI 
+{
 
     private final ClientDao clientDao;
 
     @Override
-    public void save(ClientModel clientModel) {
-
+    public void save(ClientModel clientModel)
+    {
+    	clientDao.save(clientModel);
     }
     
     @Override
