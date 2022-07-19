@@ -16,7 +16,7 @@ public class CategoryService implements  CategoryServiceI
     @Override
     public void save(CategoryModel categoryModel) 
     {
-
+    	categoryDao.save(categoryModel);
     }
 
     @Override
