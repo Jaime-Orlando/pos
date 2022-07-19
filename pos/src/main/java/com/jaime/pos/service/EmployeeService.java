@@ -17,7 +17,7 @@ public class EmployeeService implements EmployeeServiceI
 	@Override
 	public void save(EmployeeModel employeeModel)
 	{
-
+		employeeDao.save(employeeModel);
 	}
 
 	@Override
