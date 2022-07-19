@@ -9,9 +9,6 @@ import com.jaime.pos.model.ProductListForm;
 import com.jaime.pos.model.ProductListView;
 import com.jaime.pos.model.ProductModel;
 
-import java.text.MessageFormat;
-import java.util.List;
-
 @RestController
 @AllArgsConstructor // Alternativa a Autowired
 @RequestMapping("/product/")
@@ -50,16 +47,19 @@ public class ProductRestController
     	productListView.setItems(productService.findAll());
     	return productListView;
     }
+    
     @PostMapping("update")
     @ResponseBody
     public ProductModel update(@ModelAttribute ProductModel productModel)
     {
         return productService.update(productModel);
     }
+    
     @GetMapping("delete/{productId}")
     @ResponseBody
     public boolean deleteBy(@PathVariable int productId)
     {
         return productService.deleteBy(productId);
     }
+    
 }

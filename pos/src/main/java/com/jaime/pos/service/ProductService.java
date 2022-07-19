@@ -50,7 +50,12 @@ public class ProductService implements ProductServiceI
 	@Override
 	public ProductModel findBy(int id)
 	{
-		// TODO Auto-generated method stub
+		return productDao.findById(id).get();
+	}
+	
+	@Override
+	public ProductModel update(ProductModel productModel) 
+	{
 		return null;
 	}
 
@@ -60,15 +65,5 @@ public class ProductService implements ProductServiceI
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public ProductModel update(ProductModel productModel) 
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
 
 }
