@@ -19,7 +19,7 @@ public class ClientRestController
 
     @PostMapping("new")
     @ResponseBody
-    public ClientModel create(@ModelAttribute ClientForm clientForm)
+    public ClientModel create(@RequestBody ClientForm clientForm)
     {
         ClientModel clientModel = convertToClientModel(clientForm);
         clientService.save(clientModel);

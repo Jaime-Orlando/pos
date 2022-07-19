@@ -20,7 +20,7 @@ public class RoleRestController
 
     @PostMapping("new")
     @ResponseBody
-    public RoleModel create(@ModelAttribute RoleForm roleForm)
+    public RoleModel create(@RequestBody RoleForm roleForm)
 
     {
         RoleModel roleModel = convertToRoleModel(roleForm);

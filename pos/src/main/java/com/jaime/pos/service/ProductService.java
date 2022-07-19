@@ -19,8 +19,9 @@ public class ProductService implements ProductServiceI
 	@Override
 	public void save(ProductModel productModel)
 	{
-
+		productDao.save(productModel);
 	}
+	
 	@Override
 	public List<ProductModel> findAll_() 
 	{

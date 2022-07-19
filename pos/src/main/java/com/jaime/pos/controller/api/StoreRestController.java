@@ -17,7 +17,7 @@ public class StoreRestController
 {
     @PostMapping("new")
     @ResponseBody
-    public StoreModel create(@ModelAttribute StoreForm storeForm)
+    public StoreModel create(@RequestBody StoreForm storeForm)
     {
         StoreModel storeModel = convertToStoreModel(storeForm);
         storeService.save(storeModel);

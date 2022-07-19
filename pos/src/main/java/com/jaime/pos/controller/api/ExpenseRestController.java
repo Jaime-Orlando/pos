@@ -18,7 +18,7 @@ public class ExpenseRestController
     private final ExpenseServiceI expenseService;
     @PostMapping("new")
     @ResponseBody
-    public ExpenseModel create(@ModelAttribute ExpenseForm expenseForm)
+    public ExpenseModel create(@RequestBody ExpenseForm expenseForm)
     {
         ExpenseModel expenseModel = convertToExpenseModel(expenseForm);
         expenseService.save(expenseModel);

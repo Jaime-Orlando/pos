@@ -18,7 +18,7 @@ public class CategoryRestController
 
     @PostMapping("new")
     @ResponseBody
-    public CategoryModel create(@ModelAttribute CategoryForm categoryForm)
+    public CategoryModel create(@RequestBody CategoryForm categoryForm)
     {
         CategoryModel categoryModel = convertToCategoryModel(categoryForm);
         categoryService.save(categoryModel);

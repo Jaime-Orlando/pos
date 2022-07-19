@@ -20,7 +20,7 @@ public class ProductRestController
     private final ProductServiceI productService;
     @PostMapping("new")
     @ResponseBody
-    public ProductModel create(@ModelAttribute ProductForm productForm)
+    public ProductModel create(@RequestBody ProductForm productForm)
     {
         ProductModel productModel =  convertToProductModel(productForm);
         productService.save(productModel);

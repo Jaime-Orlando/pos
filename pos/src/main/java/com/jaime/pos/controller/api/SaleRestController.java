@@ -19,7 +19,7 @@ public class SaleRestController
 
     @PostMapping("new")
     @ResponseBody
-    public SaleModel create(@ModelAttribute SaleForm saleForm)
+    public SaleModel create(@RequestBody SaleForm saleForm)
     {
         SaleModel saleModel = convertToSaleModel(saleForm);
         saleService.save(saleModel);

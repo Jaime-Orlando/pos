@@ -19,7 +19,7 @@ public class EmployeeRestController
 
     @PostMapping("new")
     @ResponseBody
-    public EmployeeModel create(@ModelAttribute EmployeeForm employeeForm)
+    public EmployeeModel create(@RequestBody EmployeeForm employeeForm)
     {
         EmployeeModel employeeModel = convertToEmployeeModel(employeeForm);
         employeeService.save(employeeModel);

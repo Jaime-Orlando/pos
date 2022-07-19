@@ -19,7 +19,7 @@ public class UserRestController
     private final UserServiceI userService;
     @PostMapping("new")
     @ResponseBody
-    public UserModel create(@ModelAttribute UserForm userForm)
+    public UserModel create(@RequestBody UserForm userForm)
     {
         UserModel userModel = convertToUserModel(userForm);
         userService.save(userModel);

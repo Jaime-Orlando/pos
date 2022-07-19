@@ -20,7 +20,7 @@ public class ProviderRestController
 
     @PostMapping("new")
     @ResponseBody
-    public ProviderModel create(@ModelAttribute ProviderForm providerForm)
+    public ProviderModel create(@RequestBody ProviderForm providerForm)
     {
         ProviderModel providerModel = convertToProviderModel(providerForm);
         providerService.save(providerModel);
