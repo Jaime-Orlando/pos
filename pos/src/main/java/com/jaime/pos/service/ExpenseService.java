@@ -18,7 +18,7 @@ public class ExpenseService implements ExpenseServiceI
 	@Override
 	public void save(ExpenseModel expenseModel)
 	{
-
+		expenseDao.save(expenseModel);
 	}
 	
 	@Override
