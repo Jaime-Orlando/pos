@@ -18,7 +18,7 @@ public class ProviderService implements ProviderServiceI
 	@Override
 	public void save(ProviderModel providerModel)
 	{
-
+		providerDao.save(providerModel);
 	}
 	
 	@Override
