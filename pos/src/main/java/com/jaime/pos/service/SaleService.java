@@ -18,7 +18,7 @@ public class SaleService implements SaleServiceI
 	@Override
 	public void save(SaleModel saleModel)
 	{
-
+		saleDao.save(saleModel);
 	}
 	
 	@Override
