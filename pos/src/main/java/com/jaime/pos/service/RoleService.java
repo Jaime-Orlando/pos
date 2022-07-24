@@ -17,7 +17,7 @@ public class RoleService implements RoleServiceI
 	@Override
 	public void save(RoleModel roleModel)
 	{
-
+		roleDao.save(roleModel);
 	}
 	
 	@Override
