@@ -16,7 +16,7 @@ public class UserService implements UserServiceI
 	@Override
 	public void save(UserModel userModel) 
 	{
-
+		userDao.save(userModel);
 	}
 	
 	@Override
