@@ -16,7 +16,7 @@ public class StoreService implements StoreServiceI
 	@Override
 	public void save(StoreModel storeModel) 
 	{
-
+		storeDao.save(storeModel);
 	}
 	
 	@Override
