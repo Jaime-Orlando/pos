@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.jaime.pos.model.ProductListForm;
 import com.jaime.pos.model.ProductListView;
 import com.jaime.pos.model.ProductModel;
+import com.jaime.pos.model.ProductView;
 
 @RestController
 @AllArgsConstructor // Alternativa a Autowired
@@ -40,13 +41,21 @@ public class ProductRestController
     }
     @GetMapping("list")
     @ResponseBody
-    public ProductListView read(@ModelAttribute ProductListForm productListForm)
+    public ProductListView read()
     {
     	ProductListView productListView = new ProductListView();
     	productListView.setDescription("This is the list of all the products");
     	productListView.setItems(productService.findAll());
     	return productListView;
     }
+    
+    @GetMapping("{productId}")
+    @ResponseBody
+    public ProductView getProductDetail(@PathVariable(name = "productId") int productId)
+    {
+    	return productService.findBy(productId);
+    }
+    
     
     @PostMapping("update")
     @ResponseBody

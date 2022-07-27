@@ -1,10 +1,9 @@
-package com.jaime.pos.controller.api.form;
-
+package com.jaime.pos.model;
 import lombok.Data;
 
 @Data
-public class ProductForm 
-{
+public class ProductView {
+
     private int id;
     private String name;
     private String description;

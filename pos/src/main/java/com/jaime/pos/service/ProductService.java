@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.jaime.pos.model.ProductModel;
+import com.jaime.pos.model.ProductView;
 
 @Service
 @AllArgsConstructor
@@ -48,9 +49,11 @@ public class ProductService implements ProductServiceI
 	}
 
 	@Override
-	public ProductModel findBy(int id)
+	public ProductView findBy(int id)
 	{
-		return productDao.findById(id).get();
+		ProductModel productModel = productDao.findById(id).get();
+		ProductView productView = ProductServiceHelper.convertModelToView_(productModel);
+		return productView;
 	}
 	
 	@Override
