@@ -2,6 +2,8 @@ package com.jaime.pos.service;
 
 import com.jaime.pos.dao.CategoryDao;
 import com.jaime.pos.model.CategoryModel;
+import com.jaime.pos.model.CategoryView;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -38,9 +40,11 @@ public class CategoryService implements  CategoryServiceI
     }
 
     @Override
-    public CategoryModel findBy(int id) 
+    public CategoryView findBy(int id) 
     {
-        return null;
+    	CategoryModel categoryModel = categoryDao.findById(id).get();
+    	CategoryView categoryView = CategoryServiceHelper.convertModelToView(categoryModel);
+        return categoryView;
     }
 
     @Override

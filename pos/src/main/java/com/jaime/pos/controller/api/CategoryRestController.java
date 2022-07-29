@@ -2,6 +2,7 @@ package com.jaime.pos.controller.api;
 
 import com.jaime.pos.controller.api.form.CategoryForm;
 import com.jaime.pos.model.CategoryModel;
+import com.jaime.pos.model.CategoryView;
 import com.jaime.pos.service.CategoryServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,12 @@ public class CategoryRestController
     public List<CategoryModel> read()
     {
         return categoryService.findAll();
+    }
+    
+    @GetMapping("{categoryId}")
+    public CategoryView getCategoryDetail(@PathVariable(name = "categoryId") int categoryId) 
+    {
+    	return categoryService.findBy(categoryId);
     }
 
     @GetMapping("list/running")
