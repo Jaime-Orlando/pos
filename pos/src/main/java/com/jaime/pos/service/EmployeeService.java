@@ -7,6 +7,7 @@ import com.jaime.pos.dao.EmployeeDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.jaime.pos.model.EmployeeModel;
+import com.jaime.pos.model.EmployeeView;
 
 @Service
 @AllArgsConstructor
@@ -44,9 +45,10 @@ public class EmployeeService implements EmployeeServiceI
 	}
 
 	@Override
-	public EmployeeModel findBy(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public EmployeeView findBy(int id) {
+		EmployeeModel employeeModel = employeeDao.findById(id).get();
+		EmployeeView employeeView = EmployeeServiceHelper.convertModelToView(employeeModel);
+		return employeeView;
 	}
 
 	@Override

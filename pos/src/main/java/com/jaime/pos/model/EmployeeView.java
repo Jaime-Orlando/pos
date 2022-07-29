@@ -1,10 +1,10 @@
-package com.jaime.pos.controller.api.form;
+package com.jaime.pos.model;
 
-import lombok.Data;
 import java.time.LocalDate;
+import lombok.Data;
 
 @Data
-public class EmployeeForm
+public class EmployeeView
 {
     private int id;
     private String firstName;

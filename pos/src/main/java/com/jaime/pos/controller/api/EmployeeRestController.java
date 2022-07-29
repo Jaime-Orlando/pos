@@ -2,6 +2,7 @@ package com.jaime.pos.controller.api;
 
 import com.jaime.pos.controller.api.form.EmployeeForm;
 import com.jaime.pos.model.EmployeeModel;
+import com.jaime.pos.model.EmployeeView;
 import com.jaime.pos.service.EmployeeServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +46,12 @@ public class EmployeeRestController
     public List<EmployeeModel> read()
     {
         return employeeService.findAll();
+    }
+    
+    @GetMapping("{employeeId}")
+    public EmployeeView getEmployeeDetail(@PathVariable(name = "employeeId") int employeeId) 
+    {
+    	return employeeService.findBy(employeeId);
     }
 
     @GetMapping("list/running")
