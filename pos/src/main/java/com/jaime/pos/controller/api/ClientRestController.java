@@ -2,6 +2,7 @@ package com.jaime.pos.controller.api;
 
 import com.jaime.pos.controller.api.form.ClientForm;
 import com.jaime.pos.model.ClientModel;
+import com.jaime.pos.model.ClientView;
 import com.jaime.pos.service.ClientServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +45,12 @@ public class ClientRestController
     public List<ClientModel> read()
     {
         return clientService.findAll();
+    }
+    
+    @GetMapping("{clientId}")
+    public ClientView getClientDetail(@PathVariable(name = "clientId") int clientId) 
+    {
+    	return clientService.findBy(clientId);
     }
 
     @GetMapping("list/running")

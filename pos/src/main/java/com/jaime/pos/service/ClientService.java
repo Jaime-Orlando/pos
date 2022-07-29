@@ -2,6 +2,8 @@ package com.jaime.pos.service;
 
 import com.jaime.pos.dao.ClientDao;
 import com.jaime.pos.model.ClientModel;
+import com.jaime.pos.model.ClientView;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
@@ -44,10 +46,11 @@ public class ClientService implements ClientServiceI
     }
 
     @Override
-    public ClientModel findBy(int id)
+    public ClientView findBy(int id)
     {
-        // TODO Auto-generated method stub
-        return null;
+        ClientModel clientModel = clientDao.findById(id).get();
+        ClientView clientView = ClientServiceHelper.convertModelToView(clientModel);
+        return clientView;
     }
 
     @Override
