@@ -8,6 +8,7 @@ import com.jaime.pos.model.Currency;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.jaime.pos.model.ExpenseModel;
+import com.jaime.pos.model.ExpenseView;
 
 @Service
 @AllArgsConstructor
@@ -44,10 +45,11 @@ public class ExpenseService implements ExpenseServiceI
 	}
 
 	@Override
-	public ExpenseModel findBy(int id) 
+	public ExpenseView findBy(int id) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ExpenseModel expenseModel = expenseDao.findById(id).get();
+		ExpenseView expenseView = ExpenseServiceHelper.convertModelToView(expenseModel);
+		return expenseView;
 	}
 
 	@Override

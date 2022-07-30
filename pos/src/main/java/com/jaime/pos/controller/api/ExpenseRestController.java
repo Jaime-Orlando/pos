@@ -2,6 +2,7 @@ package com.jaime.pos.controller.api;
 
 import com.jaime.pos.controller.api.form.ExpenseForm;
 import com.jaime.pos.model.ExpenseModel;
+import com.jaime.pos.model.ExpenseView;
 import com.jaime.pos.service.ExpenseServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -44,12 +45,11 @@ public class ExpenseRestController
     {
         return expenseService.findAll();
     }
-
-    @GetMapping("list/running")
-    @ResponseBody
-    public String init()
+    
+    @GetMapping("{expenseId}")
+    public ExpenseView getExpenseDetail(@PathVariable(name = "expenseId") int expenseId) 
     {
-        return "Expense OK";
+    	return expenseService.findBy(expenseId);
     }
 
     @PostMapping("update")
