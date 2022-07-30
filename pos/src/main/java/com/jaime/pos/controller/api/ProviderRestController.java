@@ -2,12 +2,11 @@ package com.jaime.pos.controller.api;
 
 import com.jaime.pos.controller.api.form.ProviderForm;
 import com.jaime.pos.model.ProviderModel;
+import com.jaime.pos.model.ProviderView;
 import com.jaime.pos.service.ProviderServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -42,12 +41,11 @@ public class ProviderRestController
     {
         return providerService.findAll();
     }
-
-    @GetMapping("list/running")
-    @ResponseBody
-    public String init()
+    
+    @GetMapping("{providerId}")
+    public ProviderView getProviderDetail(@PathVariable(name = "providerId") int providerId) 
     {
-        return "Provider OK";
+    	return providerService.findBy(providerId);
     }
 
     @PostMapping("update")

@@ -6,6 +6,7 @@ import com.jaime.pos.dao.ProviderDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.jaime.pos.model.ProviderModel;
+import com.jaime.pos.model.ProviderView;
 
 @Service
 @AllArgsConstructor
@@ -40,10 +41,11 @@ public class ProviderService implements ProviderServiceI
 	}
 
 	@Override
-	public ProviderModel findBy(int id) 
+	public ProviderView findBy(int id) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		ProviderModel providerModel = providerDao.findById(id).get();
+		ProviderView providerView = ProviderServiceHelper.convertModelToView(providerModel);
+		return providerView;
 	}
 
 	@Override
