@@ -6,6 +6,7 @@ import com.jaime.pos.dao.RoleDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.jaime.pos.model.RoleModel;
+import com.jaime.pos.model.RoleView;
 
 @Service
 @AllArgsConstructor
@@ -38,10 +39,11 @@ public class RoleService implements RoleServiceI
 	}
 
 	@Override
-	public RoleModel findBy(int id) 
+	public RoleView findBy(int id) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		RoleModel roleModel = roleDao.findById(id).get();
+		RoleView roleView = RoleServiceHelper.convertModelToView(roleModel);
+		return roleView;
 	}
 	
 	@Override

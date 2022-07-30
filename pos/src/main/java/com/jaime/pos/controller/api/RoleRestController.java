@@ -2,6 +2,7 @@ package com.jaime.pos.controller.api;
 
 import com.jaime.pos.controller.api.form.RoleForm;
 import com.jaime.pos.model.RoleModel;
+import com.jaime.pos.model.RoleView;
 import com.jaime.pos.service.RoleServiceI;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -45,11 +46,10 @@ public class RoleRestController
         return roleService.findAll();
     }
 
-    @GetMapping("list/running")
-    @ResponseBody
-    public String init()
+    @GetMapping("{roleId}")
+    public RoleView getRoleDetail(@PathVariable int roleId) 
     {
-        return "Role OK";
+    	return roleService.findBy(roleId);
     }
 
     @PostMapping("update")
